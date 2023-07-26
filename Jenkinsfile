@@ -23,8 +23,8 @@ pipeline {
       steps{
         script {
           docker.withRegistry( '', registryCredential ) {
-            dockerImage.push("$BUILD_NUMBER")
-             dockerImage.push('latest')
+            echo "Welcome to dockerhub"
+            dockerImage.push('latest')
           }
         }
       }
