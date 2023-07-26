@@ -1,7 +1,7 @@
 pipeline {
   environment {
     imagename = "venkatbramhasani/free-css-templates"
-    registryCredential = 'dokcer-hub-venkatbramhasani'
+    registryCredential = 'dockerhub-credentials'
     dockerImage = ''
   }
   agent any
