@@ -1,4 +1,4 @@
-FROM  centos:latest
+FROM  centos:7
 MAINTAINER bramhasani.chowdary@gmail.com
 RUN yum install -y httpd \
  zip\
@@ -8,11 +8,12 @@ WORKDIR /var/www/html/
 RUN unzip photogenic.zip
 RUN cp -rvf photogenic/* .
 RUN rm -rf photogenic photogenic.zip
+RUN echo "ServerName localhost" >> /etc/httpd/conf/httpd.conf
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 EXPOSE 80 22
 
 
-# FROM  centos:latest
+# FROM  centos:7
 # MAINTAINER bramhasani.chowdary@gmail.com
 # RUN yum install -y httpd \
 #  zip\
