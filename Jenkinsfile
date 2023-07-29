@@ -25,7 +25,7 @@ pipeline {
         script {
           echo "Deploy image processed"
           docker.withRegistry( '', registryCredential ) {
-          dockerImage.push("$BUILD_NUMBER")
+          dockerImage.push('dockerImage')
           dockerImage.push('latest')
 					}
           echo "Deploy image succeeded"
