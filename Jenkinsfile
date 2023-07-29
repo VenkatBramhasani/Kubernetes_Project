@@ -25,7 +25,7 @@ pipeline {
         script {
           echo "Deploy image processed"
           docker.withRegistry( '', registryCredential ) {
-          dockerImage.push('')
+          dockerImage.push()
         }
           echo "Deploy image succeeded"
         }
