@@ -23,9 +23,8 @@ pipeline {
       steps{
         script {
           docker.withRegistry( '', registryCredential ) {
-            echo "Welcome to dockerhub"
-            dockerImage.push()
-          }
+          dockerImage.push()
+					}
         }
       }
     }
