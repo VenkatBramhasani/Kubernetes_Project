@@ -26,8 +26,7 @@ pipeline {
           echo "Deploy image processed"
           docker.withRegistry( '', registryCredential ) {
           dockerImage.push('dockerImage')
-          dockerImage.push('latest')
-					}
+        }
           echo "Deploy image succeeded"
         }
       }
