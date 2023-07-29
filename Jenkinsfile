@@ -16,6 +16,7 @@ pipeline {
       steps{
         script {
           dockerImage = 'docker.build registry + ":$BUILD_NUMBER"'
+          echo "Build image succeeded"
         }
       }
     }
@@ -25,6 +26,7 @@ pipeline {
           docker.withRegistry( '', registryCredential ) {
           dockerImage.push()
 					}
+          echo "Deploy image succeeded"
         }
       }
     }
