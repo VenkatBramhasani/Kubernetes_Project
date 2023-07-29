@@ -15,7 +15,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage = 'docker.build(imagename + ":$BUILD_NUMBER")'
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
       }
     }
@@ -24,7 +24,7 @@ pipeline {
         script {
           docker.withRegistry( '', registryCredential ) {
             echo "Welcome to dockerhub"
-            dockerImage.push('latest')
+            dockerImage.push()
           }
         }
       }
